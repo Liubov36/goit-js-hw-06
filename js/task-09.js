@@ -8,9 +8,9 @@ const refs = {
   OUTPUT_COLOR: document.querySelector(".color"),
 };
 
-refs.CHANGE_COLOR_BTN.addEventListener("click", onChengeColorBtn);
+refs.CHANGE_COLOR_BTN.addEventListener("click", onChangeColorBtn);
 
-function onChengeColorBtn() {
+function onChangeColorBtn() {
   const color = getRandomHexColor();
   refs.BODY.style.backgroundColor = color;
   refs.OUTPUT_COLOR.textContent = color;

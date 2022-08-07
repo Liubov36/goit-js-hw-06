@@ -1,9 +1,20 @@
-const inputName = document.queryCommandValue("#name-input");
-const outputName = document.queryCommandValue("#name-output");
+const inputName = document.querySelector("#name-input");
+const outputName = document.querySelector("#name-output");
+// =================================================
 
-inputName.addEventListener("input", (event) =>{
-    outputName.textContent = event.currentTarget.value
-    ? event.currentTarget.value
-    : "Anonymous";
-});
+inputName.addEventListener("input",  onInputChange); 
+console.log(`Input: ${inputName.value}`);
+ 
+
+function onInputChange (event) {
+  // event.preventDefault();   
+  if (inputName.value === "") {
+    outputName.textContent = `Anonymous`;
+    return console.log("Please fill in  the fields!");
+  }
+  outputName.textContent = event.currentTarget.value.trim();
+
+    
+ }
+console.log(inputName);
 
